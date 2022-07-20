@@ -4,7 +4,11 @@ module.exports = {
     "./src/**/*.{pug, html,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      letterSpacing: {
+        widest: '.16875em'
+      }
+    },
   },
   plugins: [],
 }

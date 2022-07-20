@@ -2,5 +2,19 @@ extend includes/layout.pug
 block append customizations
     - activePage='Home'
 block content
-    .p-4.h-32
-        div Home
+    main.flex.flex-col.items-center.space-y-20.mt-6.px-6
+        article.text-center.text-white
+            p.uppercase.text-indigo-200.font-barlow-condensed.tracking-widest(
+                class=``).
+                So, you want to travel to
+            p.uppercase.text-white.font-bellefair(
+                class=`text-[5.5rem] tracking-[2.7px]`).
+                Space
+            p.text-indigo-200.font-barlow(
+                class=`text-[15px] text-center leading-relaxed`).
+                Let’s face it; if you want to go to space, you might as well genuinely go to
+                outer space and not hover kind of on the edge of it. Well sit back, and relax
+                because we’ll give you a truly out of this world experience!
+
+        aside.w-36.h-36.flex.items-center.justify-center.rounded-full.bg-white
+            p.font-bellefair.uppercase.tracking-widest.text-xl Explore
