@@ -17,6 +17,9 @@ html.antialised
 
 
     body.min-h-screen(class=backgrounds[activePage])
-        block nav
-            include navigation
-        block content
+        div(class='h-full md:flex md:flex-col md:justify-between')
+            div
+                block nav
+                    include navigation
+            .flex-1
+                block content

@@ -2,5 +2,40 @@ extend includes/layout.pug
 block append customizations
     - activePage='Destination'
 block content
-    .p-4.h-32
-        div.text-white Destination
+
+    main.text-white
+        h1.font-barlow-condensed.uppercase.tracking-widest.space-x-2.text-center
+            span.opacity-25.font-bold 01
+            span Pick your destination
+        ul.mt-6
+            each destination in destinations
+                li
+                    input.peer.hidden(id=destination.name type="radio"
+                        name="destination" value="moon" checked=(destinations[0].name==destination.name))
+                    section.flex.flex-col.justify-between.items-center(
+                        class=`
+                            px-6
+                            scale-0 peer-checked:scale-100
+                            h-0 peer-checked:h-auto
+                            opacity-0 peer-checked:opacity-100
+                            transition-transform duration-500 ease-out
+                        `)
+
+                        img.w-44(src=destination.images.png)
+                        div.flex.space-x-4
+                            each destination in destinations
+                                label.text-white(for=destination.name)=destination.name
+                        h2.font-bellefair.text-5xl.uppercase=destination.name
+                        div
+                            div.text-indigo-200.font-barlow(
+                                class=`
+                                    text-[15px] md:text-base xl:text-lg
+                                    text-center xl:text-justify
+                                    leading-relaxed md:leading-loose xl:leading-8`
+                            )=destination.description
+
+                            dl.mt-6.flex.flex-col.items-center.uppercase
+                                dt.font-barlow-condensed.text-sm.text-indigo-200.tracking-widest Avg. Distance
+                                dd.mt-2.font-bellefair.text-3xl=destination.distance
+                                dt.mt-6.font-barlow-condensed.text-sm.text-indigo-200.tracking-widest Est. Travel time
+                                dd.mt-2.font-bellefair.text-3xl=destination.travel
