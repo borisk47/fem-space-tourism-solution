@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {},
+  "source": "src/index.pug",
   "scripts": {
-    "start": "parcel src/index.pug",
+    "start": "parcel",
     "build": "parcel build"
   },
   "devDependencies": {
