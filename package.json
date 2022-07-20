@@ -1,0 +1,17 @@
+{
+  "name": "try-parcel",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {},
+  "scripts": {
+    "start": "parcel src/index.pug",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "@parcel/transformer-pug": "2.6.2",
+    "parcel": "^2.6.2",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.6"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
+}

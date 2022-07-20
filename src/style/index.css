@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:ital,wght@0,400;0,500;0,700;1,400&family=Bellefair&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer utilities {
+    .font-barlow {
+        font-family: 'Barlow', sans-serif;
+    }
+
+    .font-barlow-condensed {
+        font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    .font-bellefair {
+        font-family: 'Bellefair', serif;
+    }
+}
+
+
+@layer utilities {
+
+    .bg-home {
+        background-image: url(../assets/home/background-home-mobile.jpg);
+        
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center; 
+        
+    }
+
+
+    @screen md {
+        .bg-home {
+            background-image: url(../assets/home/background-home-tablet.jpg);
+            
+        }
+    }
+
+    @screen lg {
+        .bg-home {
+            background-image: url(../assets/home/background-home-desktop.jpg);
+            
+        }
+    }
+
+}
+
