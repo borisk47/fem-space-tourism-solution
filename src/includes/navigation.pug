@@ -6,7 +6,7 @@
         {title: 'Technology', href: 'technology.pug'},
     ];
 
-- highlight_item = active_nav === undefined ? 'Home' :  active_nav
+
 
 header.p-6.pr-4.flex.relative.justify-between.items-center.overflow-x-clip
     img(src="assets/shared/logo.svg" class="w-10 h-10")
@@ -34,7 +34,7 @@ header.p-6.pr-4.flex.relative.justify-between.items-center.overflow-x-clip
             each item, index in navigation
                 - nav_index = index.toString().padStart(2, '0')
                 li 
-                    - const highligh_class = (item.title == highlight_item) ? 'border-r-4 border-white' : ''
+                    - const highligh_class = (item.title == activePage) ? 'border-r-4 border-white' : ''
                     a.block.w-full.space-x-2.font-barlow-condensed.tracking-widest(href=item.href, 
                         class=`
                             ${highligh_class}

@@ -1,10 +1,23 @@
+-
+    const backgrounds = {
+        'Home': 'bg-home',
+        'Destination': 'bg-destination',
+        'Crew': 'bg-crew',
+        'Technology': 'bg-technology',
+    };
+
+block customizations
+    - let activePage='Home'
 html.antialised
     head
         meta(charset='UTF-8')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
 
         link(href="style/index.css" rel="stylesheet")
-    body.min-h-screen.bg-home
+
+
+    body.min-h-screen(class=backgrounds[activePage])
         block nav
             include navigation
+        div.text-lg.text-yellow-200=activePage
         block content
