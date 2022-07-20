@@ -7,6 +7,9 @@ module.exports = {
     extend: {
       letterSpacing: {
         widest: '.16875em'
+      },
+      fontSize: {
+        '10xl': '9.375rem'
       }
     },
   },

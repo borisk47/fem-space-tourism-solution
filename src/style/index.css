@@ -37,7 +37,7 @@
         }
     }
 
-    @screen lg {
+    @screen xl {
         .bg-home {
             background-image: url(../assets/home/background-home-desktop.jpg);
             
@@ -59,7 +59,7 @@
         }
     }
 
-    @screen lg {
+    @screen xl {
         .bg-crew {
             background-image: url(../assets/crew/background-crew-desktop.jpg);
 
@@ -81,7 +81,7 @@
         }
     }
 
-    @screen lg {
+    @screen xl {
         .bg-destination {
             background-image: url(../assets/destination/background-destination-desktop.jpg);
 
@@ -103,7 +103,7 @@
         }
     }
 
-    @screen lg {
+    @screen xl {
         .bg-technology {
             background-image: url(../assets/technology/background-technology-desktop.jpg);
 
