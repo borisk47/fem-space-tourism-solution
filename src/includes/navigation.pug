@@ -10,10 +10,10 @@
 
 header.flex.relative.justify-between.items-center.overflow-x-clip(
     class=`
-        pl-6 pt-6 pr-4 md:pl-9 md:pt-0 md:pr-0
+        pl-6 pt-6 pr-4 md:pl-9 xl:pl-14 md:pt-0 xl:mt-10 md:pr-0
     `)
     img(src="assets/shared/logo.svg" class="w-10 h-10 md:w-12 md:h-12")
-    div.hidden.w-full.h-px.ml-14.-mr-8.bg-gray-600.z-10
+    div.w-full.h-px.ml-14.-mr-8.bg-gray-600.z-10(class='hidden xl:block')
     label.p-2.cursor-pointer(for="menu-toggler"
         class="md:hidden")
         img.w-6(src="assets/shared/icon-hamburger.svg")
@@ -21,11 +21,11 @@ header.flex.relative.justify-between.items-center.overflow-x-clip(
     nav.text-white.bg-opacity-5.backdrop-blur-lg.bg-white(
         class=`
                 w-64 h-screen md:w-auto md:h-auto
-                md:px-12
+                md:px-12 xl:px-32 xl:pr-40
                 peer-checked:-translate-x-full
                 transform-gpu
                 absolute  left-full top-0 md:static
-                transition-all ease-in-out duration-300
+                transition-all ease-in-out duration-300 md:transition-none
         `)
         .mt-6.mr-4.flex.justify-end(class='md:hidden')
             label.inline-block.p-2.cursor-pointer(for="menu-toggler")
@@ -48,5 +48,5 @@ header.flex.relative.justify-between.items-center.overflow-x-clip(
                             block w-full md:inline-block md:w-auto
                             px-8 py-1.5 md:px-0 md:py-9
                         `)
-                        span.font-bold.tabular-nums(class='md:hidden') #{nav_index}
-                        span.uppercase(class='md:text-sm') #{item.title}
+                        span.font-bold.tabular-nums(class='md:hidden xl:inline') #{nav_index}
+                        span.uppercase(class='md:text-sm xl:text-base') #{item.title}
