@@ -22,10 +22,16 @@ block content
                             div.grid-crew-photo.place-self-end
                                 img(src=member.images.png class='max-h-[680px]')
                             div.grid-crew-nav.self-end
-                                ul
+                                ul.flex.space-x-2
                                     each crewBtn, crewBtnIdx  in crew
                                         li
-                                            a(href=`#crew-${crewBtnIdx}`)=crewBtn.name
+                                            a.block.p-1.group(href=`#crew-${crewBtnIdx}` title=crewBtn.name)
+                                                div.h-3.w-3.rounded-full(
+                                                    class='group-hover:bg-gray-500'
+                                                    class={
+                                                        'bg-white': crewBtnIdx == memberIdx,
+                                                        'bg-gray-700': crewBtnIdx != memberIdx,
+                                                    })
 
 
 
