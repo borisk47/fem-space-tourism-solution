@@ -3,7 +3,7 @@ block append customizations
     - activePage='Destination'
 block content
 
-    main.text-white
+    main.mt-4.text-white
         h1.font-barlow-condensed.uppercase.tracking-widest.space-x-2.text-center
             span.opacity-25.font-bold 01
             span Pick your destination
@@ -24,19 +24,37 @@ block content
 
                         img.w-44.duration-700.delay-100.scale-0.scale-100-in-active-destination(src=destination.images.png)
 
-                        div.flex.space-x-4
-                            each destination in destinations
-                                label.text-white(for=destination.name)=destination.name
-                        h2.font-bellefair.text-5xl.uppercase=destination.name
+                        nav.mt-4
+                            ul.flex.space-x-4
+                                each destBtn in destinations
+                                    li
+                                        label.py-2.text-sm.uppercase.font-barlow-condensed.tracking-widest.text-white(
+                                            for=destBtn.name
+                                            class={
+                                                'text-indigo-200':destBtn.name!=destination.name,
+                                                'border-b-4':destBtn.name==destination.name,
+                                            }
+                                            )=destBtn.name
+
+                        h2.mt-8.font-bellefair.text-5xl.uppercase=destination.name
+
                         div
-                            div.text-indigo-200.font-barlow(
+                            div.mt-4.text-indigo-200.font-barlow(
                                 class=`
                                     text-[15px] md:text-base xl:text-lg
                                     text-center xl:text-justify
                                     leading-relaxed md:leading-loose xl:leading-8`
                             )=destination.description
 
-                            dl.mt-6.flex.flex-col.items-center.uppercase.delay-100.duration-700.scale-0.scale-100-in-active-destination
+                            dl(
+                                class=`
+                                    flex flex-col items-center
+                                    scale-0 scale-100-in-active-destination
+                                    mt-12 p-8
+                                    border-t border-gray-700
+                                    uppercase
+                                    delay-100 duration-700
+                                `)
                                 dt.font-barlow-condensed.text-sm.text-indigo-200.tracking-widest Avg. Distance
                                 dd.mt-2.font-bellefair.text-3xl=destination.distance
                                 dt.mt-6.font-barlow-condensed.text-sm.text-indigo-200.tracking-widest Est. Travel time
