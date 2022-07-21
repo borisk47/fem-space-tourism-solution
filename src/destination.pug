@@ -3,8 +3,11 @@ block append customizations
     - activePage='Destination'
 block content
 
-    main.mt-5.text-white
-        h1.font-barlow-condensed.uppercase.tracking-widest.space-x-2.text-center
+    main.text-white(
+        class=`mt-5 md:mt-1 md:p-9`)
+        h1.font-barlow-condensed.uppercase.tracking-widest.space-x-2(
+            class=`
+            text-center md:text-left md:text-xl`)
             span.opacity-25.font-bold 01
             span Pick your destination
         ul.mt-6
@@ -14,7 +17,8 @@ block content
                         name="destination" value="moon" checked=(destinations[0].name==destination.name))
                     section.flex.flex-col.justify-between.items-center(
                         class=`
-                            px-6
+                            md:mt-12
+                            px-6 md:px-16
                             scale-0 peer-checked:scale-100
                             h-0 peer-checked:h-auto
                             opacity-0 peer-checked:opacity-100
@@ -22,14 +26,16 @@ block content
                             transition-transform ease-out
                         `)
 
-                        img.w-44.duration-700.delay-100.scale-0.scale-100-in-active-destination(src=destination.images.png)
+                        img.duration-700.delay-100.scale-0.scale-100-in-active-destination(src=destination.images.png
+                            class=`w-44 md:w-[300px]`)
 
-                        nav.mt-4
-                            ul.flex.space-x-4
+                        nav(class=`mt-4 md:mt-12`)
+                            ul.flex(class=`space-x-4 md:space-x-8`)
                                 each destBtn in destinations
                                     li
-                                        label.py-2.text-sm.uppercase.font-barlow-condensed.tracking-widest.text-white(
+                                        label.py-2.uppercase.font-barlow-condensed.tracking-widest.text-white(
                                             for=destBtn.name
+                                            class='text-sm md:text-base'
                                             class={
                                                 'text-indigo-200':destBtn.name!=destination.name,
                                                 'border-b-4':destBtn.name==destination.name,
@@ -38,7 +44,9 @@ block content
 
                         h2.mt-6.font-bellefair.uppercase(
                             class=`
-                                text-[3.5rem] leading-snug
+                                md:mt-8
+                                text-[3.5rem] md:text-[5rem]
+                                leading-snug
                             `)=destination.name
 
                         div
@@ -46,19 +54,24 @@ block content
                                 class=`
                                     text-[15px] md:text-base xl:text-lg
                                     text-center xl:text-justify
-                                    leading-relaxed md:leading-loose xl:leading-8`
+                                    leading-relaxed md:leading-7`
                             )=destination.description
 
-                            dl(
+                            section(
                                 class=`
                                     flex flex-col items-center
                                     scale-0 scale-100-in-active-destination
-                                    mt-9 p-9
+                                    mt-9 pt-9
                                     border-t border-gray-700
+                                    space-y-6
                                     uppercase
                                     delay-100 duration-700
                                 `)
-                                dt.font-barlow-condensed.text-sm.text-indigo-200.tracking-widest Avg. Distance
-                                dd.mt-2.font-bellefair.text-3xl=destination.distance
-                                dt.mt-6.font-barlow-condensed.text-sm.text-indigo-200.tracking-widest Est. Travel time
-                                dd.mt-2.font-bellefair.text-3xl=destination.travel
+                                - const dtClass='font-barlow-condensed text-sm text-indigo-200 tracking-widest'
+                                - const ddClass='font-bellefair text-3xl'
+                                dl.text-center.space-y-2
+                                    dt(class=dtClass) Avg. Distance
+                                    dd(class=ddClass)=destination.distance
+                                dl.text-center.space-y-2
+                                    dt(class=dtClass) Est. Travel time
+                                    dd(class=ddClass)=destination.travel
