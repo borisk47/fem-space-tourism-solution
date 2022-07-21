@@ -34,10 +34,14 @@ block content
                                     li
                                         label.py-2.uppercase.font-barlow-condensed.tracking-widest.text-white(
                                             for=destBtn.name
-                                            class='text-sm md:text-base'
+                                            class=`
+                                                cursor-pointer
+                                                text-sm md:text-base
+                                                `
                                             class={
                                                 'text-indigo-200':destBtn.name!=destination.name,
                                                 'border-b-4':destBtn.name==destination.name,
+                                                'hover:border-white/50 hover:border-b-4':destBtn.name!=destination.name,
                                             }
                                             )=destBtn.name
 
