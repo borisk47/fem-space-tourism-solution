@@ -109,8 +109,13 @@
 
         }
     }
-    
-    
+
+
+    .peer:checked ~ section .scale-100-in-active-destination {
+        @apply scale-100;
+    }
+
+
 
 }
 
