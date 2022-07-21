@@ -29,8 +29,11 @@ block content
                             transition-transform ease-out
                         `)
 
-                        img.duration-700.delay-100.scale-0.scale-100-in-active-destination(src=destination.images.png
-                            class=`w-44 md:w-[300px] xl:w-[445px]`)
+                        img.duration-700.delay-100(src=destination.images.png
+                            class=`
+                                w-44 md:w-[300px] xl:w-[445px]
+                                scale-0 [.peer:checked~*_&]:scale-100
+                                `)
 
                         div(class=`
                                 flex flex-col
@@ -78,11 +81,11 @@ block content
                                     class=`
                                         flex flex-col md:flex-row
                                         items-center md:justify-center xl:justify-start
-                                        scale-0 scale-100-in-active-destination
+                                        scale-0 [.peer:checked~*_&]:scale-100
                                         mt-9 md:mt-6
                                         space-y-6 md:space-y-0 md:space-x-24
                                         uppercase
-                                        delay-100 duration-700
+                                        delay-100 duration-300
                                     `)
                                     - const dtClass='font-barlow-condensed text-sm text-indigo-200 tracking-widest'
                                     - const ddClass='font-bellefair text-3xl'
