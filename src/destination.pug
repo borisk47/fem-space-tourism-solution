@@ -3,7 +3,7 @@ block append customizations
     - activePage='Destination'
 block content
 
-    main.mt-4.text-white
+    main.mt-5.text-white
         h1.font-barlow-condensed.uppercase.tracking-widest.space-x-2.text-center
             span.opacity-25.font-bold 01
             span Pick your destination
@@ -36,10 +36,13 @@ block content
                                             }
                                             )=destBtn.name
 
-                        h2.mt-8.font-bellefair.text-5xl.uppercase=destination.name
+                        h2.mt-6.font-bellefair.uppercase(
+                            class=`
+                                text-[3.5rem] leading-snug
+                            `)=destination.name
 
                         div
-                            div.mt-4.text-indigo-200.font-barlow(
+                            div.text-indigo-200.font-barlow(
                                 class=`
                                     text-[15px] md:text-base xl:text-lg
                                     text-center xl:text-justify
@@ -50,7 +53,7 @@ block content
                                 class=`
                                     flex flex-col items-center
                                     scale-0 scale-100-in-active-destination
-                                    mt-12 p-8
+                                    mt-9 p-9
                                     border-t border-gray-700
                                     uppercase
                                     delay-100 duration-700
