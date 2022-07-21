@@ -22,7 +22,7 @@ block content
                             transition-transform ease-out
                         `)
 
-                        img.w-44.duration-700.scale-0.scale-100-in-active-destination(src=destination.images.png)
+                        img.w-44.duration-700.delay-100.scale-0.scale-100-in-active-destination(src=destination.images.png)
 
                         div.flex.space-x-4
                             each destination in destinations
@@ -36,7 +36,7 @@ block content
                                     leading-relaxed md:leading-loose xl:leading-8`
                             )=destination.description
 
-                            dl.mt-6.flex.flex-col.items-center.uppercase.duration-300.scale-0.scale-100-in-active-destination
+                            dl.mt-6.flex.flex-col.items-center.uppercase.delay-100.duration-700.scale-0.scale-100-in-active-destination
                                 dt.font-barlow-condensed.text-sm.text-indigo-200.tracking-widest Avg. Distance
                                 dd.mt-2.font-bellefair.text-3xl=destination.distance
                                 dt.mt-6.font-barlow-condensed.text-sm.text-indigo-200.tracking-widest Est. Travel time
