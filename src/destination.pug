@@ -12,7 +12,7 @@ block content
             span Pick your destination
         ul.mt-6
             each destination in destinations
-                li
+                li.overflow-hidden
                     input.peer.hidden(id=destination.name type="radio"
                         name="destination" value="moon" checked=(destinations[0].name==destination.name))
                     section.flex.flex-col.justify-between.items-center(
@@ -52,6 +52,7 @@ block content
                         div
                             div.text-indigo-200.font-barlow(
                                 class=`
+                                    max-w-sm md:max-w-xl
                                     text-[15px] md:text-base xl:text-lg
                                     text-center xl:text-justify
                                     leading-relaxed md:leading-7`
@@ -59,11 +60,12 @@ block content
 
                             section(
                                 class=`
-                                    flex flex-col items-center
+                                    flex flex-col md:flex-row
+                                    items-center md:justify-center
                                     scale-0 scale-100-in-active-destination
-                                    mt-9 pt-9
+                                    mt-9 pt-9 md:mt-14
                                     border-t border-gray-700
-                                    space-y-6
+                                    space-y-6 md:space-y-0 md:space-x-24
                                     uppercase
                                     delay-100 duration-700
                                 `)
