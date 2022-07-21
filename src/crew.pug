@@ -2,5 +2,30 @@ extend includes/layout.pug
 block append customizations
     - activePage='Crew'
 block content
-    .p-4.h-32
-        div.text-white Crew
+    main.text-white(
+        class=`mt-5 md:mt-1 xl:mt-8  xl:pl-40`)
+        h1.font-barlow-condensed.uppercase.tracking-widest.space-x-2(
+            class=`
+            text-center md:text-left md:text-xl xl:text-3xl`)
+            span.opacity-25.font-bold 02
+            span Meet your crew
+
+        div.text-white
+            ul.flex.items-stretch.gap-8.overflow-x-scroll.bg-green-500(class='w-[1200px]' style='scroll-behavior: smooth; scroll-snap-type: x mandatory;')
+                each member, memberIdx in crew
+                    li(id=`crew-${memberIdx}` )
+                        section.grid.grid-crew.h-full(class='w-[1200px] bg-blue-400/80 overflow-hidden')
+                            div.mt-16.grid-crew-card
+                                p.font-bellefair.text-3xl.text-gray-500.uppercase.tracking-wide=member.role
+                                h2.mt-6.font-bellefair.text-4xl.uppercase.tracking-wide(class='text-[3.5rem] whitespace-nowrap')=member.name
+                                p.mt-6.font-barlow.text-indigo-200(class='max-w-[28rem] xl:text-lg')=member.bio
+                            div.grid-crew-photo.place-self-end
+                                img(src=member.images.png class='max-h-[680px]')
+                            div.grid-crew-nav.self-end
+                                ul
+                                    each crewBtn, crewBtnIdx  in crew
+                                        li
+                                            a(href=`#crew-${crewBtnIdx}`)=crewBtn.name
+
+
+

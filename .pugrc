@@ -1,6 +1,5 @@
 {
     "locals": {
-        "name": 'boris',
          "destinations": [
            {
              "name": "Moon",

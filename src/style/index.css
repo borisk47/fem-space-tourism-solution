@@ -119,3 +119,28 @@
 
 }
 
+
+@layer components {
+
+    .grid-crew {
+        grid-template-areas:
+            "card    photo"
+            "nav     photo"
+            ;
+    }
+
+
+    .grid-crew-card {
+        grid-area: card;
+    }
+
+    .grid-crew-nav {
+        grid-area: nav;
+    }
+
+    .grid-crew-photo {
+        grid-area: photo;
+    }
+
+}
+
