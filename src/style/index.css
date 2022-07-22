@@ -116,9 +116,30 @@
 
     .grid-crew {
         grid-template-areas:
+            "photo"
+            "nav"
+            "card"
+            ;
+    }
+
+    @screen md {
+        .grid-crew {
+            grid-template-areas:
+            "card"
+            "nav"
+            "photo"
+            ;
+        }
+    }
+
+
+    @screen xl {
+        .grid-crew {
+            grid-template-areas:
             "card    photo"
             "nav     photo"
-            ;
+        ;
+        }
     }
 
 

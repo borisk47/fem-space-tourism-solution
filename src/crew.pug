@@ -2,6 +2,7 @@ extend includes/layout.pug
 block append customizations
     - activePage='Crew'
 block content
+
     main.text-white(
         class=`mt-5 md:mt-1 xl:mt-8  xl:pl-40`)
         h1.font-barlow-condensed.uppercase.tracking-widest.space-x-2(
@@ -11,27 +12,26 @@ block content
             span Meet your crew
 
         div.text-white
-            ul.flex.items-stretch.gap-8.overflow-x-scroll.snap-x.snap-mandatory.scroll-smooth.scrollbar-hidden(class='w-[1200px]')
+            article.flex.items-stretch.gap-8.overflow-x-scroll.snap-x.snap-mandatory.scroll-smooth.scrollbar-hidden(class='w-screen xl:w-[1200px]')
                 each member, memberIdx in crew
-                    li.flex-none.w-full.snap-center(id=`crew-${memberIdx}`)
-                        section.grid.grid-crew.h-full(class='overflow-hidden')
-                            div.mt-16.grid-crew-card
-                                p.font-bellefair.text-3xl.text-gray-500.uppercase.tracking-wide=member.role
-                                h2.mt-6.font-bellefair.text-4xl.uppercase.tracking-wide(class='text-[3.5rem] whitespace-nowrap')=member.name
-                                p.mt-6.font-barlow.text-indigo-200(class='max-w-[28rem] xl:text-lg')=member.bio
-                            div.grid-crew-photo.place-self-end
-                                img(src=member.images.png class='max-h-[680px]')
-                            div.grid-crew-nav.self-end
-                                ul.flex.space-x-2
-                                    each crewBtn, crewBtnIdx  in crew
-                                        li
-                                            a.block.p-1.group(href=`#crew-${crewBtnIdx}` title=crewBtn.name)
-                                                div.h-3.w-3.rounded-full(
-                                                    class='group-hover:bg-gray-500'
-                                                    class={
-                                                        'bg-white': crewBtnIdx == memberIdx,
-                                                        'bg-gray-700': crewBtnIdx != memberIdx,
-                                                    })
+                    section.relative.grid.grid-crew.flex-none.w-full.snap-center(id=`crew-${memberIdx}`)
+                        div.mt-16.grid-crew-card
+                            p.font-bellefair.text-3xl.text-gray-500.uppercase.tracking-wide=member.role
+                            h2.mt-6.font-bellefair.text-4xl.uppercase.tracking-wide(class='text-[3.5rem] whitespace-nowrap')=member.name
+                            p.mt-6.font-barlow.text-indigo-200(class='max-w-[28rem] xl:text-lg')=member.bio
+                        div.grid-crew-photo.place-self-end
+                            img(src=member.images.png class='max-h-[680px]')
+                        div.grid-crew-nav.self-end.sticky.left-0
+                            ul.flex.space-x-2
+                                each crewBtn, crewBtnIdx  in crew
+                                    li
+                                        a.block.p-1.group(href=`#crew-${crewBtnIdx}` title=crewBtn.name)
+                                            div.h-3.w-3.rounded-full(
+                                                class='group-hover:bg-gray-500'
+                                                class={
+                                                    'bg-white': crewBtnIdx == memberIdx,
+                                                    'bg-gray-700': crewBtnIdx != memberIdx,
+                                                })
 
 
 
