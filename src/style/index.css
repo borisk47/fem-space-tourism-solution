@@ -138,8 +138,10 @@
             grid-template-areas:
             "card    photo"
             "nav     photo"
-        ;
+            ;
+            grid-template-columns: max-content 1fr;
         }
+
     }
 
 
