@@ -130,6 +130,7 @@
             "nav"
             "photo"
             ;
+            grid-template-rows:  auto min-content min-content;
         }
     }
 
