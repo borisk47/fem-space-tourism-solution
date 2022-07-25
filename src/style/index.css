@@ -5,7 +5,6 @@
 @tailwind utilities;
 
 
-
 @layer utilities {
     .font-barlow {
         font-family: 'Barlow', sans-serif;
@@ -20,95 +19,79 @@
     }
 }
 
+body {
+    background: linear-gradient(
+            rgba(11, 13, 23, 0.6),
+            rgba(11, 13, 23, 0.6)
+    ), var(--backround-image) center/cover no-repeat;
+}
 
 @layer utilities {
 
     .bg-home {
-        background-image: url(../assets/home/background-home-mobile.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center; 
+        --backround-image: url(/src/assets/home/background-home-mobile.jpg);
     }
-
 
     @screen md {
         .bg-home {
-            background-image: url(../assets/home/background-home-tablet.jpg);
+            --backround-image: url(/src/assets/home/background-home-tablet.jpg);
         }
     }
 
     @screen xl {
         .bg-home {
-            background-image: url(../assets/home/background-home-desktop.jpg);
-            
+            --backround-image: url(/src/assets/home/background-home-desktop.jpg);
         }
     }
-
 
     .bg-crew {
-        background-image: url(../assets/crew/background-crew-mobile.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+        --backround-image: url(/src/assets/crew/background-crew-mobile.jpg);
     }
-
 
     @screen md {
         .bg-crew {
-            background-image: url(../assets/crew/background-crew-tablet.jpg);
+            --backround-image: url(/src/assets/crew/background-crew-tablet.jpg);
         }
     }
 
     @screen xl {
         .bg-crew {
-            background:  linear-gradient(
-                    rgba(11, 13, 23, 0.6),
-                    rgba(11, 13, 23, 0.6)
-            ), url(../assets/crew/background-crew-desktop.jpg) center/cover no-repeat ;
-
+            --backround-image: url(/src/assets/crew/background-crew-desktop.jpg);
         }
     }
 
 
     .bg-destination {
-        background-image: url(../assets/destination/background-destination-mobile.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+        --backround-image: url(/src/assets/destination/background-destination-mobile.jpg);
     }
-
 
     @screen md {
         .bg-destination {
-            background-image: url(../assets/destination/background-destination-tablet.jpg);
+            --backround-image: url(/src/assets/destination/background-destination-tablet.jpg);
         }
     }
 
     @screen xl {
         .bg-destination {
-            background-image: url(../assets/destination/background-destination-desktop.jpg);
+            --backround-image: url(/src/assets/destination/background-destination-desktop.jpg);
 
         }
     }
 
 
     .bg-technology {
-        background-image: url(../assets/technology/background-technology-mobile.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+        --backround-image: url(/src/assets/technology/background-technology-mobile.jpg);
     }
-
 
     @screen md {
         .bg-technology {
-            background-image: url(../assets/technology/background-technology-tablet.jpg);
+            --backround-image: url(/src/assets/technology/background-technology-tablet.jpg);
         }
     }
 
     @screen xl {
         .bg-technology {
-            background-image: url(../assets/technology/background-technology-desktop.jpg);
+            --backround-image: url(/src/assets/technology/background-technology-desktop.jpg);
 
         }
     }
@@ -121,8 +104,7 @@
         grid-template-areas:
             "photo"
             "nav"
-            "card"
-            ;
+            "card";
         grid-template-rows: min-content min-content auto;
     }
 
@@ -131,8 +113,7 @@
             grid-template-areas:
             "card"
             "nav"
-            "photo"
-            ;
+            "photo";
             grid-template-rows:  auto min-content min-content;
         }
     }
@@ -142,8 +123,7 @@
         .grid-crew {
             grid-template-areas:
             "card    photo"
-            "nav     photo"
-            ;
+            "nav     photo";
             grid-template-columns: max-content 1fr;
             grid-template-rows:  auto min-content;
         }
@@ -168,10 +148,10 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .scrollbar-hidden {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
 .scrollbar-hidden::-webkit-scrollbar {
-     display: none;   /* Hide scrollbar for Chrome, Safari and Opera */
- }
+    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+}
