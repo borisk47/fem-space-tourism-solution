@@ -4,7 +4,10 @@ block append customizations
 block content
 
     main.mx-auto.text-white(
-        class=`mt-5 md:mt-1 xl:mt-8  xl:pl-40`)
+        class=`
+            mt-5 md:mt-1 xl:mt-8
+            xl:pl-40
+          `)
         h1.font-barlow-condensed.uppercase.tracking-widest.space-x-2(
             class=`
             text-center md:text-left md:text-xl xl:text-3xl`)
@@ -12,16 +15,46 @@ block content
             span Meet your crew
 
 
-        article.flex.items-stretch.gap-8.overflow-x-scroll.snap-x.snap-mandatory.scroll-smooth.scrollbar-hidden(class='w-screen xl:w-[1200px]')
+        article.flex.items-stretch.overflow-x-scroll.snap-x.snap-mandatory.scroll-smooth.scrollbar-hidden(
+            class=`
+                mt-6
+                w-screen xl:w-[1200px]
+                gap-8
+            `)
             each member, memberIdx in crew
-                section.relative.grid.grid-crew.flex-none.w-full.snap-center(id=`crew-${memberIdx}`)
-                    div.pt-36.grid-crew-card
-                        p.font-bellefair.text-3xl.text-gray-500.uppercase.tracking-wide=member.role
-                        h2.mt-6.font-bellefair.uppercase.tracking-wide(class='text-[3.5rem] whitespace-nowrap')=member.name
-                        p.mt-6.font-barlow.text-indigo-200(class='max-w-[28rem] xl:text-lg')=member.bio
-                    div.grid-crew-photo.place-self-end.justify-self-center
-                        img(src=member.images.png class='max-h-[680px]')
-                    div.pb-20.grid-crew-nav.self-end.sticky.left-0
+                section.grid.grid-crew.flex-none.w-full.snap-center(id=`crew-${memberIdx}`
+                    class=`
+                        px-6
+                    `)
+
+                    div.grid-crew-card(
+                            class=`pt-6 xl:pt-36 text-center xl:text-left `)
+                        p.font-bellefair.text-gray-500.uppercase.tracking-wide(
+                            class=`xl:text-3xl`)=member.role
+                        h2.font-bellefair.uppercase.tracking-wide(
+                            class='mt-0.5 xl:mt-6 text-2xl xl:text-[3.5rem] whitespace-nowrap')=member.name
+                        p.font-barlow.text-indigo-200(
+                            class='mt-4 text-[15px] xl:mt-6 max-w-[28rem] xl:text-lg')=member.bio
+
+                    div.grid-crew-photo(
+                        class=`
+                            border-b border-gray-700
+                            h-[222px]
+                            flex justify-center
+
+                            xl:place-self-end xl:justify-self-center
+                        `)
+                        img(src=member.images.png
+                            class=`
+                                object-scale-down
+                                xl:w-1/2
+                                `)
+
+                    div.grid-crew-nav(
+                        class=`
+                            mt-5
+                            flex justify-center xl:self-end xl:pb-20
+                            `)
                         ul.flex.space-x-2
                             each crewBtn, crewBtnIdx  in crew
                                 li

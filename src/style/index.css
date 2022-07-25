@@ -120,6 +120,7 @@
             "nav"
             "card"
             ;
+        grid-template-rows: min-content min-content auto;
     }
 
     @screen md {
