@@ -16,10 +16,11 @@ html.antialised.overflow-x-hidden
         link(href="style/index.css" rel="stylesheet")
 
 
-    body.min-h-screen.overflow-x-hidden(class=backgrounds[activePage])
-        div(class='h-full md:flex md:flex-col md:justify-between')
-            div
-                block nav
-                    include navigation
-            .flex-1
-                block content
+    body.overflow-x-hidden(
+        class=backgrounds[activePage]
+        class=`
+            flex flex-col
+        `)
+        include navigation
+        .flex-1
+            block content
