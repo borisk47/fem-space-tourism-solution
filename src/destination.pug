@@ -5,11 +5,9 @@ block content
 
     main.text-white(
         class=`mt-5 md:mt-1 xl:mt-8 md:p-9 xl:pl-40`)
-        h1.font-barlow-condensed.uppercase.tracking-widest.space-x-2(
-            class=`
-            text-center md:text-left md:text-xl xl:text-3xl`)
-            span.opacity-25.font-bold 01
-            span Pick your destination
+        h1.text-page-title
+            span(aria-hidden='true') 01
+            | Pick your destination
         ul(class='mt-6 md:mt-12')
             each destination in destinations
                 li.overflow-hidden
