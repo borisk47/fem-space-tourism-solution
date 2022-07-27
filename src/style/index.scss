@@ -21,8 +21,8 @@
 
 body {
     background:linear-gradient(
-            rgba(11, 13, 23, 0.6),
-            rgba(11, 13, 23, 0.6)
+            rgba(11, 13, 23, 0),
+            rgba(11, 13, 23, 0)
     ), var(--backround-image) center/cover no-repeat fixed;
 }
 
@@ -180,7 +180,7 @@ html {
 
     .text-description {
         @apply
-            font-barlow text-indigo-200
+            font-barlow text-[#D0D6F9]
             text-[15px] md:text-base xl:text-lg
             leading-relaxed md:leading-7 xl:leading-8
             ;
