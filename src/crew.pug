@@ -40,20 +40,18 @@ block content
                         class=`
                             md:mt-6
                             border-b border-gray-700 md:border-b-none xl:border-b
-                            h-[222px] md:h-[520px] xl:h-[620px]
-                            flex justify-center
-
-                            md:self-end md:justify-self-center
+                            justify-self-center
                         `)
                         img(src=member.images.png
                             class=`
-                                object-scale-down
+                                max-h-[222px] md:max-h-[520px] xl:max-h-[620px]
+                                object-contain
                                 `)
 
                     div.grid-crew-nav(
                         class=`
                             mt-5 md:smt-4 xl:mt-0
-                            xl:pb-2
+                            xl:pb-24
                             justify-self-center xl:justify-self-start xl:self-end
                             `)
                         ul.flex(class='space-x-2 xl:space-x-4')
