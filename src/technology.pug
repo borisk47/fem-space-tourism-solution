@@ -2,5 +2,54 @@ extend includes/layout.pug
 block append customizations
     - activePage='Technology'
 block content
-    .p-4.h-32
-        div.text-white Technology
+    main.text-white.flex.flex-col
+        .p-4.h-32
+            div.text-white Technology
+        nav(
+            class=`
+                fixed w-full
+                flex justify-center items-center
+                 text-center top-[12rem] z-20
+                mix-blend-difference
+            `)
+            ul.flex.gap-8
+                each step, index in technology
+                    li
+                        a(href='#'
+                            class=`
+                                flex justify-center items-center
+                                p-2 w-20
+                                aspect-square rounded-full
+                                border border-gray-400
+                                font-bellefair text-3xl
+                            `)=index+1
+
+
+        div.overflow-y-scroll.grow.flex.w-screen.snap-x.snap-mandatory.scroll-smooth.scrollbar-hidden
+            each step in technology
+                .flex.flex-col.w-full.flex-none.snap-center
+                    nav(
+                        class=`
+                            flex justify-center items-center
+                        `)
+                        ul.flex.gap-8
+                            each navStep, index in technology
+                                li
+                                    a(href='#'
+                                        class={
+                                            'bg-white border-white': step == navStep,
+                                            'border-transparent': step != navStep,
+                                        }
+                                        class=`
+                                            flex justify-center items-center
+                                            p-2 w-20
+                                            aspect-square rounded-full
+                                            border
+                                            font-bellefair text-3xl
+                                        `)
+
+                    h2.text-white=step.name
+                    p.text-description=step.description
+                    picture
+                        source(srcset=step.images.portrait media='(min-width: 768px)')
+                        img(src=step.images.landscape)
