@@ -13,14 +13,14 @@ header.flex.justify-between.items-center(
         pl-6 pt-6 pr-4 md:pl-9 xl:pl-14 md:pt-0 xl:mt-10 md:pr-0
     `)
     img(src="assets/shared/logo.svg" class="w-10 h-10 md:w-12 md:h-12")
-    div.w-full.h-px.ml-14.-mr-8.bg-gray-600.z-20(class='hidden xl:block')
+    div.w-full.h-px.ml-14.-mr-8.bg-gray-600.z-50(class='hidden xl:block')
     label.p-2.cursor-pointer(for="menu-toggler"
         class="md:hidden")
         img.w-6(src="assets/shared/icon-hamburger.svg")
     input#menu-toggler.hidden.peer(type="checkbox")
     nav.text-white.bg-opacity-5.backdrop-blur-lg.bg-white(
         class=`
-                z-10
+                z-40
                 w-64 h-screen md:w-auto md:h-auto
                 md:px-12 xl:px-32 xl:pr-40
                 peer-checked:-translate-x-full
