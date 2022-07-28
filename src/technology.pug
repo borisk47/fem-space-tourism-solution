@@ -5,7 +5,7 @@ block content
     - const circleGapClasses = `gap-4`
     - const circleSizingClasses = `w-10 md:w-[3.75rem]`
     main.text-white.flex.flex-col(
-        class=`mt-5 md:mt-1 xl:mt-8 `)
+        class=`mt-5 md:mt-1 xl:mt-8`)
         h1.text-page-title
             span(aria-hidden='true') 02
             | Space Launch 101
@@ -41,7 +41,7 @@ block content
             class=`
                 mt-8 md:mt-5
                 grow flex w-screen
-                overflow-y-scroll snap-x snap-mandatory scroll-smooth scrollbar-hidden
+                overflow-x-scroll snap-x snap-mandatory scroll-smooth scrollbar-hidden
             `)
             each step, stepIndex in technology
                 section(id=`step-${stepIndex}` class=`
