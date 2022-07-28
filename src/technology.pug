@@ -2,54 +2,71 @@ extend includes/layout.pug
 block append customizations
     - activePage='Technology'
 block content
-    main.text-white.flex.flex-col
-        .p-4.h-32
-            div.text-white Technology
+    main.text-white.flex.flex-col(
+        class=`mt-5 md:mt-1 xl:mt-8 md:p-9 xl:pl-40`)
+        h1.text-page-title
+            span(aria-hidden='true') 02
+            | Space Launch 101
+
+        p(class=`
+            fixed w-full top-[25.5rem]
+            font-barlow-condensed uppercase
+            tracking-widest text-sm text-indigo-200 text-center
+            `) The terminology ...
         nav(
             class=`
                 fixed w-full
                 flex justify-center items-center
-                 text-center top-[12rem] z-20
+                 text-center top-[21.25rem] z-20
                 mix-blend-difference
             `)
-            ul.flex.gap-8
+            ul.flex.gap-4
                 each step, index in technology
                     li
-                        a(href='#'
+                        a(href=`#step-${index}`
                             class=`
                                 flex justify-center items-center
-                                p-2 w-20
+                                w-10
                                 aspect-square rounded-full
-                                border border-gray-400
-                                font-bellefair text-3xl
+                                border border-gray-500
+                                font-bellefair leading-none
                             `)=index+1
 
 
-        div.overflow-y-scroll.grow.flex.w-screen.snap-x.snap-mandatory.scroll-smooth.scrollbar-hidden
-            each step in technology
-                .flex.flex-col.w-full.flex-none.snap-center
-                    nav(
+        article(
+            class=`
+                mt-8
+                grow flex w-screen
+                overflow-y-scroll snap-x snap-mandatory scroll-smooth scrollbar-hidden
+            `)
+            each step, stepIndex in technology
+                section(id=`step-${stepIndex}` class=`
+                    flex-none
+                    flex flex-col w-full
+                    snap-center
+                `)
+                    div.order-2(
+                        aria-hidden=true
                         class=`
-                            flex justify-center items-center
+                            mt-8
+                            flex justify-center items-center gap-4
                         `)
-                        ul.flex.gap-8
-                            each navStep, index in technology
-                                li
-                                    a(href='#'
-                                        class={
-                                            'bg-white border-white': step == navStep,
-                                            'border-transparent': step != navStep,
-                                        }
-                                        class=`
-                                            flex justify-center items-center
-                                            p-2 w-20
-                                            aspect-square rounded-full
-                                            border
-                                            font-bellefair text-3xl
-                                        `)
+                        each navStep, index in technology
+                            div(href='#'
+                                class={
+                                    'bg-white border-white': step == navStep,
+                                    'border-transparent': step != navStep,
+                                }
+                                class=`
+                                    flex justify-center items-center
+                                    w-10
+                                    aspect-square rounded-full
+                                    border
+                                `)
 
-                    h2.text-white=step.name
-                    p.text-description=step.description
-                    picture
+                    section.order-3(class='mt-[3.25rem] px-6 text-center')
+                        h2(class=`font-bellefair text-[24px] uppercase`)=step.name
+                        p.mt-4.text-description=step.description
+                    picture(class='order-1')
                         source(srcset=step.images.portrait media='(min-width: 768px)')
-                        img(src=step.images.landscape)
+                        img(src=step.images.landscape class='h-[10.5rem] object-cover')
