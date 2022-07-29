@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/(\\w+\\.\\w+\\.\\w+)",
+      "source": "/([^.]+\\.[^.]+\\.[^.]+)",
       "headers" : [
         {
           "key": "Cache-Control",
