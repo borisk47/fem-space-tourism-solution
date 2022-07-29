@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/*.css",
+      "source": "/(\\w+\\.\\w+\\.\\w+)",
       "headers" : [
         {
           "key": "Cache-Control",
