@@ -36,18 +36,18 @@ html {
 @layer utilities {
 
     .bg-home {
-        --backround-image: url(/src/assets/home/background-home-mobile.jpg);
+        --backround-image: url(/src/assets/home/background-home-mobile.jpg?as=webp);
     }
 
     @screen md {
         .bg-home {
-            --backround-image: url(/src/assets/home/background-home-tablet.jpg);
+            --backround-image: url(/src/assets/home/background-home-tablet.jpg?as=webp);
         }
     }
 
     @screen xl {
         .bg-home {
-            --backround-image: url(/src/assets/home/background-home-desktop.jpg);
+            --backround-image: url(/src/assets/home/background-home-desktop.jpg?as=webp);
         }
     }
 
@@ -69,18 +69,18 @@ html {
 
 
     .bg-destination {
-        --backround-image: url(/src/assets/destination/background-destination-mobile.jpg);
+        --backround-image: url(/src/assets/destination/background-destination-mobile.jpg?as=webp);
     }
 
     @screen md {
         .bg-destination {
-            --backround-image: url(/src/assets/destination/background-destination-tablet.jpg);
+            --backround-image: url(/src/assets/destination/background-destination-tablet.jpg?as=webp);
         }
     }
 
     @screen xl {
         .bg-destination {
-            --backround-image: url(/src/assets/destination/background-destination-desktop.jpg);
+            --backround-image: url(/src/assets/destination/background-destination-desktop.jpg?as=webp);
 
         }
     }
