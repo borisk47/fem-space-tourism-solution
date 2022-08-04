@@ -92,13 +92,13 @@ html {
 
     @screen md {
         .bg-technology {
-            --backround-image: url(/src/assets/technology/background-technology-tablet.jpg);
+            --backround-image: url(/src/assets/technology/background-technology-tablet.jpg?as=webp);
         }
     }
 
     @screen xl {
         .bg-technology {
-            --backround-image: url(/src/assets/technology/background-technology-desktop.jpg);
+            --backround-image: url(/src/assets/technology/background-technology-desktop.jpg?as=webp);
 
         }
     }
