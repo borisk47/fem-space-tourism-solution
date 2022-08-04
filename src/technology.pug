@@ -92,7 +92,9 @@ block content
                         p.text-description(class='mt-4 md:mt-2 xl:mt-6 xl:max-w-[27.75rem]')=step.description
                     picture(class='xl:flex-none order-1 xl:order-3')
                         source(srcset=step.images.portrait media='(min-width: 1024px)')
-                        img(src=step.images.landscape
+                        source(srcset=`${step.images.landscape}?as=webp&width=768` media='(min-width: 768px)')
+                        img(src!=`${step.images.landscape}?as=webp&width=375`
+                            loading="lazy"
                             class=`
                                 w-full xl:w-auto
                                 h-[10.5rem] md:h-[19.375rem] xl:h-[527px]
