@@ -52,18 +52,18 @@ html {
     }
 
     .bg-crew {
-        --backround-image: url(/src/assets/crew/background-crew-mobile.jpg);
+        --backround-image: url(/src/assets/crew/background-crew-mobile.jpg?as=webp);
     }
 
     @screen md {
         .bg-crew {
-            --backround-image: url(/src/assets/crew/background-crew-tablet.jpg);
+            --backround-image: url(/src/assets/crew/background-crew-tablet.jpg?as=webp);
         }
     }
 
     @screen xl {
         .bg-crew {
-            --backround-image: url(/src/assets/crew/background-crew-desktop.jpg);
+            --backround-image: url(/src/assets/crew/background-crew-desktop.jpg?as=webp);
         }
     }
 
